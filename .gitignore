@@ -4,3 +4,5 @@
 assets/external/
 *.db
 __pycache__/
+/.idea/
+/.venv
