@@ -15,6 +15,20 @@ class State(rx.State):
         self.count -= 1
 
 
+class MyState(rx.State):
+    count_2: int = 0
+    color: str = "red"
+
+
+def counter():
+    return rx.hstack(
+        rx.heading("Count: ", color=MyState.color),
+        rx.heading(
+            MyState.count_2,
+        ),
+    )
+
+
 # page index
 def index() -> rx.Component:
     return rx.vstack(
@@ -40,6 +54,7 @@ def index() -> rx.Component:
                 round_button(),
             )
         ),
+        counter(),
         spacing="4",
     )
 
